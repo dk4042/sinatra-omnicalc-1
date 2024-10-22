@@ -39,3 +39,15 @@ get ("/random_result") do
   @the_result = rand(@the_min..@the_max)
   erb(:random_result)
 end
+
+get("/payment/new") do 
+  erb(:payment_calc)
+end
+
+get("/payment_result") do 
+  @t_apr = params.fetch("user_apr").to_f
+  @t_years = params.fetch("user_years").to_f
+  @t_principal = params.fetch("user_pv").to_f
+  @the_result = 
+  erb(:payment_result)
+end
