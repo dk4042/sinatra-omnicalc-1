@@ -28,3 +28,11 @@ get("/square_root_result") do
   @the_result = @the_num ** (0.5)
   erb(:square_root_result)
 end
+
+get("/random/new") do 
+  erb(:random_calc)
+end
+
+get '/random/results' do
+  erb(:random_result)
+end
