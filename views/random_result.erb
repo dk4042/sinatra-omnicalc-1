@@ -1,21 +1,28 @@
-<form action="/random/results">
-  <div>
-    <label for="min_input">
-      Minimum
-    </label>
+<h1>Random Results</h1>
 
-    <input id="min_input" text="text" name="user_min">
-  </div>
+<dl>
+  <dt>
+    Minimum
+  </dt>
+  <dd>
+     <%=@the_min%>
+  </dd>
 
-  <div>
-    <label for="max_input">
-      Maximum
-    </label>
+  <dt>
+    Maximum
+  </dt>
+  <dd>
+      <%=@the_max%>
+  </dd>
 
-    <input id="max_input" text="text" name="user_max">
-  </div>
+  <dt>
+    Random Number
+  </dt>
+  <dd>
+   <%= @the_result%>
+  </dd>
+</dl>
 
-  <button>
-    Pick random number
-  </button>
-</form>
+<a href="/random/new">
+  Pick another random number
+</a>
