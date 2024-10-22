@@ -20,9 +20,10 @@ end
 
 
 get("/square_root/new") do
-  erb(:new_square_calc)
+  erb(:square_root_calc)
+end
 
-  get9"/square_root/results") do
+get("/square_root_result") do
   @the_num = params.fetch("users_number").to_f
   @the_result = @the_num ** (0.5)
   erb(:square_root_result)
