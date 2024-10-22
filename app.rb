@@ -46,8 +46,12 @@ end
 
 get("/payment_result") do 
   @t_apr = params.fetch("user_apr").to_f
-  @t_years = params.fetch("user_years").to_f
+  @t_r = @t_apr / (100 * 12)
+  @t_years = params.fetch("user_years").to_i 
+  @t_n = @t_years * 12
   @t_principal = params.fetch("user_pv").to_f
-  @the_result = 
+  @denominator = 1 - (1 + @t_r) ** (-@t_n)
+  @numerator = @t_r * @t_principal
+  @the_result = @numerator / @denominator
   erb(:payment_result)
 end
